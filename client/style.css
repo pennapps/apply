@@ -58,3 +58,12 @@ legend {
 
 fieldset {
   margin-bottom: 1em; }
+
+.closed {
+  min-height: 100px;
+  text-align: center;
+}
+
+.closed h3 {
+  margin-top: 100px;
+}
