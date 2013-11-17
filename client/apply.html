@@ -20,7 +20,93 @@
   </form>
   {{else}}
   <form id='application-form'>
-    <input type='email' placeholder='Email' value='{{ email }}'>
+    {{#with person}}
+    <fieldset>
+      <legend>
+        Personal Information
+      </legend>
+
+      <div class="form-group">
+        <label class="control-label col-sm-3">
+          Email
+        </label>
+        <div class="col-sm-9">
+          <input class="form-control" id="email" name="email" size="30" type="email" value="{{ email }}"/>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="control-label col-sm-3">
+          Name
+        </label>
+        <div class="col-sm-9">
+          <input class="form-control" id="name" name="name" size="30" type="text" />
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="control-label col-sm-3">
+          School Name
+        </label>
+        <div class="col-sm-9">
+          <input autocomplete="off" class="form-control" id="school_name" name="school_name" size="30" type="text" />
+        </div>
+      </div>
+
+    </fieldset>
+
+    <fieldset>
+      <legend>
+        Shit you've done
+      </legend>
+
+      <div class="form-group">
+        <label class="control-label col-sm-3">
+          LinkedIn
+        </label>
+        <div class="col-sm-9">
+          <input class="form-control" id="linkedin" name="linkedin" size="30" type="text" />
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="control-label col-sm-3">
+          GitHub
+        </label>
+        <div class="col-sm-9">
+          <input class="form-control" id="github" name="github" size="30" type="text" />
+        </div>
+      </div>
+
+      <div class="form-group-other">
+        <label class='form-textarea-label'> 
+          Please list any additional projects you have worked on and any hackathons awards you have won.<br>
+          Provide links where applicable
+        </label>
+        <div>
+          <textarea class="form-textarea" id="additional_info" name="additional_info" ></textarea>
+        </div>
+      </div>
+
+      <div class="form-group-other">
+        <label class='form-textarea-label'> 
+          Please list any potential team members (include school) (up to three).
+        </label>
+        <div>
+          <textarea class="form-textarea" id="team_info" name="team_info" ></textarea>
+        </div>
+      </div>
+
+    </fieldset>
+
+    <fieldset>
+      <div class="form-group">
+        <div class="col-sm-9 col-sm-offset-1">
+          <input class="btn btn-primary" name="commit" type="submit" value="Submit Application" />
+        </div>
+      </div>
+    </fieldset>
+    {{/with}}
   </form>
   {{/unless}}
 

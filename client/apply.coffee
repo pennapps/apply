@@ -12,6 +12,5 @@ Template.application.events
     return false
 
 Template.application.helpers
-  person: -> Session.get("person")
-  email: -> Session.get("email")
+  person: -> Session.get("person") or {email: Session.get("email")}
   submittedEmail: -> !!Session.get("email")
