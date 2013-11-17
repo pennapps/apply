@@ -3,12 +3,26 @@
 </head>
 
 <body>
-  {{> application}}
+  <div class='container'>
+    {{> application}}
+  </div>
 </body>
 
 <template name="application">
-  <h1>PennApps</h1>
-  <h2>Apply online.</h2>
+  <h1>PennApps Spring 2014 Application</h1>
+  <h2>The next PennApps is February 14 - 16, 2014. You don't want to miss this.</h2>
+
+  {{#unless submittedEmail}}
+  <form id='email-form'>
+    <label for='email'>Email</label>
+    <input id='email' type='email' placeholder='Email'>
+    <input type='submit' class='btn' value='Apply'>
+  </form>
+  {{else}}
+  <form id='application-form'>
+    <input type='email' placeholder='Email' value='{{ email }}'>
+  </form>
+  {{/unless}}
 
 
 </template>
