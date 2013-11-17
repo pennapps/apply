@@ -1,5 +1,6 @@
+/*.col-sm-3 {width : 25%;}*/
 .form-control { max-width : 300px; }
-.col-sm-3 {width : 25%;}
 .form-textarea {width:600px; height: 150px; margin: 5px 0px 10px 0px;}
 .form-textarea-label {margin: 5px 0px 10px 0px;}
-.form-group-other {margin: 25px 0px 10px 80px;}
+#team_info {max-width:600px;}
+#additional_info {max-width:600px; height: 150px;}
