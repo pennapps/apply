@@ -4,14 +4,26 @@
 
 <body>
   <div class='container'>
-    {{> application}}
+    {{> main}}
   </div>
 </body>
 
-<template name="application">
+<template name="main">
   <h1>PennApps Spring 2014 Application</h1>
   <h2>The next PennApps is February 14 - 16, 2014. You don't want to miss this.</h2>
 
+  {{#if submitted}}
+    {{> submitted}}
+  {{else}}
+    {{> application}}
+  {{/if}}
+</template>
+
+<template name="submitted">
+<h1>YOURE DONE</h1>
+</template>
+
+<template name="application">
   {{#unless submittedEmail}}
   <form id='email-form'>
     <label for='email'>Email</label>
@@ -109,6 +121,4 @@
     {{/with}}
   </form>
   {{/unless}}
-
-
 </template>
