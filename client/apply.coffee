@@ -37,7 +37,9 @@ jQuery.fn.serializeObject = ->
   return objectData
 
 email = getUrlParams(window.location.search.substr(1)).email
-Session.set("email", email) if email
+if email
+  Session.set("email", email)
+  Emails.insert({email, ts: new Date()})
 
 Template.main.helpers
   submitted: -> !!Session.get("submitted")
