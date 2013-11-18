@@ -8,5 +8,4 @@ insecure
 preserve-inputs
 coffeescript
 less
-npm
 audit-argument-checks
