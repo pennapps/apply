@@ -1,13 +1,13 @@
 Meteor.startup ->
   if People.find().count() == 0
-    console.log 'there are no people'
     Converter = Meteor.require("csvtojson").core.Converter
     csvConverter = new Converter()
-    csvConverter.on "end_parsed", (jsonObj) ->
-      #People.insert(jsonObj.csvRows)
+    fn = Meteor.bindEnvironment ((jsonObj) ->
+      for row in jsonObj.csvRows
+        People.insert(row)), (e) -> console.log e
+    csvConverter.on "end_parsed", fn
     csvConverter.from "/home/geoff/Code/apply/public/people.csv"
 
-Meteor.methods
-  lookup: (email) ->
-    check(email, String)
-    People.findOne(email: email)
+Meteor.publish "lookup", (email) ->
+  check(email, String)
+  return People.find(email: email)
