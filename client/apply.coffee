@@ -1,7 +1,8 @@
 Deps.autorun ->
   Meteor.subscribe "lookup", Session.get("email"), ->
-    console.log "subscribed to #{Session.get("email")}"
-    Session.set("person", People.findOne(email: Session.get("email")))
+    email = Session.get("email")
+    if email.lastIndexOf(".") > email.lastIndexOf("@")
+      Session.set("person", People.findOne(email: Session.get("email")))
 
 # http://stackoverflow.com/questions/901115/how-can-i-get-query-string-values-in-javascript
 getUrlParams = (a) ->
@@ -35,19 +36,11 @@ jQuery.fn.serializeObject = ->
       objectData[@name] = value
   return objectData
 
+email = getUrlParams(window.location.search.substr(1)).email
+Session.set("email", email) if email
+
 Template.main.helpers
   submitted: -> !!Session.get("submitted")
-
-# could probably do it outside this method
-Template.application.created = ->
-  email = getUrlParams(window.location.search.substr(1)).email
-  if email
-    Session.set("email", email)
-    Meteor.subscribe("lookup", email)
-    Emails.insert(email)
-    p = People.findOne(email: email)
-    console.log p
-    Session.set("person", p)
 
 Template.application.events
   'keyup': (e) ->
