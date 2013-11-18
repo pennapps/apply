@@ -1,3 +1,15 @@
+# http://stackoverflow.com/questions/901115/how-can-i-get-query-string-values-in-javascript
+getUrlParams = (a) ->
+  a = a.split("&")
+  return {} unless a.length
+  b = {}
+
+  for p in a
+    p = p.split("=")
+    continue unless p.length is 2
+    b[p[0]] = decodeURIComponent(p[1].replace(/\+/g, " "))
+  return b
+
 # http://stackoverflow.com/questions/1184624/convert-form-data-to-js-object-with-jquery/8407771#8407771
 jQuery.fn.serializeObject = ->
   arrayData = @serializeArray()
@@ -16,8 +28,10 @@ jQuery.fn.serializeObject = ->
       objectData[@name].push value
     else
       objectData[@name] = value
-
   return objectData
+
+params = getUrlParams window.location.search.substr(1)
+Session.set("email", params.email)
 
 Template.main.helpers
   submitted: -> !!Session.get("submitted")
@@ -42,4 +56,3 @@ Template.application.events
 
 Template.application.helpers
   person: -> Session.get("person") or {email: Session.get("email")}
-  submittedEmail: -> !!Session.get("email")

@@ -27,31 +27,6 @@
 </template>
 
 <template name="application">
-  {{#unless submittedEmail}}
-  <form id='email-form'>
-
-
-      <div class="form-group-other">
-        <label class='form-textarea-label'>
-          Please enter your email address
-        </label>
-        <div>
-          <input class="form-control"  id='email' type='email' placeholder='Email'/>
-        </div>
-      </div>
-
-    </fieldset>
-
-    <fieldset>
-      <div class="form-group">
-        <div class="col-sm-9 col-sm-1">
-          <input class="btn btn-primary" name="commit" type="submit" value="Apply" />
-        </div>
-      </div>
-    </fieldset>
-
-  </form>
-  {{else}}
   <form id='application-form'>
     {{#with person}}
     <fieldset>
@@ -142,5 +117,4 @@
     </fieldset>
     {{/with}}
   </form>
-  {{/unless}}
 </template>
