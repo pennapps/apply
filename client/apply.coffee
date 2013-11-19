@@ -41,6 +41,17 @@ if email
   Session.set("email", email)
   Emails.insert({email, ts: new Date()})
 
+# https://about.twitter.com/resources/buttons#tweet
+Template.submitted.rendered = ->
+  ((d,s,id) ->
+    fjs=d.getElementsByTagName(s)[0]
+    p= if /^http:/.test(d.location) then 'http' else 'https'
+    if !d.getElementById(id)
+      js=d.createElement(s)
+      js.id=id;js.src=p+'://platform.twitter.com/widgets.js'
+      fjs.parentNode.insertBefore(js,fjs)
+  )(document, 'script', 'twitter-wjs')
+
 Template.main.helpers
   submitted: -> !!Session.get("submitted")
 
@@ -51,9 +62,7 @@ Template.application.events
 
   'submit #application-form': (e) ->
     app = $('#application-form').serializeObject()
-    console.log(app)
-    Apps.insert(app)  # should we do this on the server so we can rate limit and shit?
-    # reflect that they're done
+    Apps.insert(app)
     Session.set("submitted", true)
     return false
 

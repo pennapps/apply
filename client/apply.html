@@ -1,6 +1,6 @@
 <head>
   <title>PennApps Application</title>
-  <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+  <meta name="viewport" content="width=device-width, user-scalable=no">
 </head>
 
 <body>
@@ -22,6 +22,10 @@
 <template name="submitted">
 <div class='done'>
   <span>You're Done!</span>
+  <div class='share'>
+    <a href="https://twitter.com/PennApps" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @PennApps</a>
+    <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://2014s.pennapps.com" data-text="I applied to #PennApps and so can you" data-via="PennApps" data-size="large">Tweet</a>
+  </div>
 </div>
 </template>
 
@@ -92,26 +96,20 @@
           Provide links where applicable.
         </label>
         <div>
-          <textarea required class="form-control" id="additional_info" name="additional_info" >{{ additional_info}}</textarea>
+          <textarea required class="form-control" id="additional_info" name="additional_info" ></textarea>
         </div>
       </div>
 
       <div class="form-group-other">
         <label class='form-textarea-label'> 
-		Do you have friends that you'd like to recommend or work with on a team? Please list up to three people with their schools.
-	</label>
+          Do you have friends that you'd like to recommend or work with on a team? Please list up to three people with their schools.
+        </label>
         <div>
-          <input class="form-control" id="team_info" name="team_info" size="30" type="text" value="{{ team_info }}" />
+          <input class="form-control" id="team_info" name="team_info" size="30" type="text" />
         </div>
       </div>
-      <div>
-      <legend>
-	  <p>
-	  <p>Questions? Email <a href="mailto:contact@pennapps.com">contact@pennapps.com</a>.</p>
-      </legend>
-      </div>
-    </fieldset>
 
+    </fieldset>
 
     <fieldset>
       <div class="form-group">
@@ -122,4 +120,5 @@
     </fieldset>
     {{/with}}
   </form>
+  <p>Questions? Email <a href="mailto:contact@pennapps.com">contact@pennapps.com</a></p>
 </template>
