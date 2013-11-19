@@ -9,3 +9,8 @@ Apps.allow
   insert: -> true
   update: -> false
   remove: -> false
+
+Emails.allow
+  insert: -> true
+  update: -> false
+  remove: -> false
