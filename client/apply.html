@@ -12,7 +12,6 @@
 <template name="main">
   <h1>PennApps Spring 2014 Application</h1>
   <h2>The next PennApps is February 14 - 16, 2014. <br> You don't want to miss this.</h2>
-
   {{#if submitted}}
     {{> submitted}}
   {{else}}
@@ -65,7 +64,7 @@
 
     <fieldset>
       <legend>
-        Things you've done
+        Things You've Done
       </legend>
 
       <div class="form-group">
@@ -99,14 +98,20 @@
 
       <div class="form-group-other">
         <label class='form-textarea-label'> 
-          Have any friends that you'd like to recommend or work on a team with? Type in their names separated by commas. If you recommend a friend, they are more likely to get in.
-        </label>
+		Do you have friends that you'd like to recommend or work with on a team? Please list up to three people with their schools.
+	</label>
         <div>
           <input class="form-control" id="team_info" name="team_info" size="30" type="text" value="{{ team_info }}" />
         </div>
       </div>
-
+      <div>
+      <legend>
+	  <p>
+	  <p>Questions? Email contact@pennapps.com.</p>
+      </legend>
+      </div>
     </fieldset>
+
 
     <fieldset>
       <div class="form-group">
