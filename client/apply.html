@@ -10,13 +10,16 @@
 </body>
 
 <template name="main">
-  <h1>PennApps Spring 2014 Application</h1>
+  <h1><a href='http://2014s.pennapps.com'>PennApps Spring 2014 Application</a></h1>
   <h2>The next PennApps is February 14 - 16, 2014. <br> You don't want to miss this.</h2>
   {{#if submitted}}
     {{> submitted}}
   {{else}}
     {{> application}}
   {{/if}}
+  <div class='questions'>
+    <p>Questions? Email <a href="mailto:contact@pennapps.com">contact@pennapps.com</a></p>
+  </div>
 </template>
 
 <template name="submitted">
@@ -120,5 +123,4 @@
     </fieldset>
     {{/with}}
   </form>
-  <p>Questions? Email <a href="mailto:contact@pennapps.com">contact@pennapps.com</a></p>
 </template>
