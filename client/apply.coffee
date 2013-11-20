@@ -62,6 +62,7 @@ Template.application.events
 
   'submit #application-form': (e) ->
     app = $('#application-form').serializeObject()
+    app.ts = new Date()
     Apps.insert(app)
     Session.set("submitted", true)
     return false
