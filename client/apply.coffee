@@ -63,7 +63,8 @@ Template.application.events
   'submit #application-form': (e) ->
     app = $('#application-form').serializeObject()
     app.ts = new Date()
-    Apps.insert(app)
+    console.log(app)
+    Meteor.call 'apply', app
     Session.set("submitted", true)
     return false
 

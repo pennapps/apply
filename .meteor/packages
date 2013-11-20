@@ -8,3 +8,4 @@ preserve-inputs
 coffeescript
 less
 audit-argument-checks
+email

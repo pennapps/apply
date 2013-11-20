@@ -1,0 +1,60 @@
+/*
+ * These styles override the default styling on the apply.pennapps.com page.
+ */
+.centered {
+  display: block;
+  margin: 0 auto; }
+
+a:link {
+  color: #084080;
+  text-decoration: none; }
+  a:link:hover {
+    color: #052850;
+    text-decoration: underline; }
+  a:link:visited {
+    color: #021020; }
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+ul, ol {
+  list-style: none;
+  margin: 0;
+  padding: 0; }
+
+html, body {
+  height: 100%; }
+
+body, input {
+  font-family: "Mission Gothic Regular";
+  font-size: 18px; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal;
+  font-family: "Verlag Bold"; }
+
+i, em {
+  font-style: normal;
+  font-family: "Mission Gothic Light Italic"; }
+
+label {
+  font-weight: normal;
+  font-family: "Mission Gothic Light Italic"; }
+
+legend {
+  font-family: "Mission Gothic Bold"; }
+
+.container h1 {
+  color: #052850; }
+.container h2 {
+  color: #cb5555;
+  margin: 1em 0; }
+
+.form-group {
+  float: left;
+  width: 100%; }
+
+fieldset {
+  margin-bottom: 1em; }
