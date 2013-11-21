@@ -8,7 +8,16 @@ Meteor.publish "lookup", (email) ->
 
 Meteor.methods
   apply: (app) ->
-    check(app, Object)
+    check app,
+      Match.ObjectIncluding
+        email: NonEmptyString
+        additional_info: NonEmptyString
+        github: NonEmptyString
+        linkedin: NonEmptyString
+        name: NonEmptyString
+        school: NonEmptyString
+        team_info: String
+        ts: Match.Any
     Apps.insert(app)
     # need to set MAIL_URL
     ###
