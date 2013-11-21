@@ -11,9 +11,9 @@ Meteor.methods
     check app,
       Match.ObjectIncluding
         email: NonEmptyString
-        additional_info: NonEmptyString
-        github: NonEmptyString
-        linkedin: NonEmptyString
+        additional_info: String
+        github: String
+        linkedin: String
         name: NonEmptyString
         school: NonEmptyString
         team_info: String
