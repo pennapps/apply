@@ -7,5 +7,6 @@ standard-app-packages
 preserve-inputs
 coffeescript
 less
-audit-argument-checks
 email
+paginated-subscription
+z-mongo-admin
