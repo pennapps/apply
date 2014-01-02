@@ -10,14 +10,16 @@
   </div>
 </body>
 
+<template name="offline">
+  <div class="closed">
+    <h3>Registration is now closed.</h3>
+  </div>
+</template>
+
 <template name="main">
   <h1><a href='http://2014s.pennapps.com'>PennApps Spring 2014 Application</a></h1>
   <h2>The next PennApps is February 14 - 16, 2014. <br> You don't want to miss this.</h2>
-  {{#if submitted}}
-    {{> submitted}}
-  {{else}}
-    {{> application}}
-  {{/if}}
+  {{> offline}}
   <div class='questions'>
     <p>Questions? Email <a href="mailto:contact@pennapps.com">contact@pennapps.com</a></p>
   </div>
