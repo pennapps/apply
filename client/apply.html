@@ -18,7 +18,7 @@
 
 <template name="main">
   <h1><a href='http://2014s.pennapps.com'>PennApps Spring 2014 Application</a></h1>
-  <h2>The next PennApps is February 14 - 16, 2014. <br> You don't want to miss this.</h2>
+  <h2>The next PennApps is February 14 - 16, 2014. <br>Penn applicants only.</h2>
   {{#if submitted}}
     {{> submitted}}
   {{else}}
@@ -70,7 +70,7 @@
           School
         </label>
         <div class="col-sm-9">
-          <input required autocomplete="off" class="form-control" id="school" name="school" size="30" type="text" value="{{ school }}"/>
+          <input required autocomplete="off" class="form-control" id="school" name="school" size="30" type="text" disabled value="University of Pennsylvania"/>
         </div>
       </div>
 
@@ -107,16 +107,7 @@
         <div>
           <textarea required class="form-control" id="additional_info" name="additional_info" ></textarea>
         </div>
-        <span class="help-block"><em>If you are a Penn student, mention whether you have completed, CIS 110, CIS 120, CIS 121, or any CIS 19x courses.</em></span>
-      </div>
-
-      <div class="form-group-other">
-        <label class='form-textarea-label'> 
-          Do you have friends that you'd like to recommend or work with on a team? Please list up to three people with their schools.
-        </label>
-        <div>
-          <input class="form-control" id="team_info" name="team_info" size="30" type="text" />
-        </div>
+        <span class="help-block"><em>Mention whether you have completed, CIS 110, CIS 120, CIS 121, or any CIS 19x courses.</em></span>
       </div>
 
     </fieldset>
