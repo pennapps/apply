@@ -11,12 +11,7 @@ Meteor.methods
     check app,
       Match.ObjectIncluding
         email: NonEmptyString
-        additional_info: String
-        github: String
-        linkedin: String
         name: NonEmptyString
-        school: NonEmptyString
-        team_info: String
         ts: Match.Any
     Apps.insert(app)
     # need to set MAIL_URL
